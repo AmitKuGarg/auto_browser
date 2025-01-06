@@ -44,3 +44,5 @@ python main.py C:\\learn\\vector_store
 2. Open your browser and navigate to `http://localhost:7860`
 
 3. Enter your query in natural language
+
+![image](https://github.com/user-attachments/assets/05baffb8-3060-415b-91dd-33cad549a28f)

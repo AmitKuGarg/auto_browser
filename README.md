@@ -36,6 +36,8 @@ echo "OPENAI_API_KEY=your-api-key-here" > .env
 
 ## 💻 Usage
 
+Note. I have done scrapping for https://www.rsystems.com/ using web_scraper 
+
 1. Start the Gradio interface:
 ```bash
 python main.py C:\\learn\\vector_store

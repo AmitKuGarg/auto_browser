@@ -1,7 +1,7 @@
 import json
-from typing import Dict
-
+import re
 from openai import OpenAI
+from typing import Dict
 
 from src.config.settings import OPENAI_API_KEY, MODEL_NAME, SYSTEM_PROMPT
 from src.storage import VectorStore
@@ -32,10 +32,13 @@ class OpenAIClient:
             ]
             response = self.client.chat.completions.create(
                 model=MODEL_NAME,
-                messages=messages
+                messages=messages,
+                temperature=0
             )
 
-            response_json = json.loads(response.choices[0].message.content)
+            response_text = response.choices[0].message.content
+            cleaned_text = re.sub(r'^```json\s*|\s*```$', '', response_text.strip())
+            response_json = json.loads(cleaned_text)
             self.conversation_history.append({
                 "role": "assistant",
                 "content": response.choices[0].message.content

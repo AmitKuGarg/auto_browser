@@ -20,7 +20,7 @@ An intelligent tool that uses natural language processing to understand user que
 
 1. Clone the repository:
 ```bash
-cd auto-browser-agent
+cd auto_browser
 ```
 
 2. Install required packages:
